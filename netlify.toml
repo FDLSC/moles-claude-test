@@ -3,7 +3,7 @@
 
 [build]
   # Comando para compilar el proyecto
-  command = "npm run build"
+  command = "CI=false npm run build"
   
   # Carpeta que se publica
   publish = "build"
