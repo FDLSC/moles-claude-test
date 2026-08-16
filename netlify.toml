@@ -1,0 +1,36 @@
+# Configuración para Netlify
+# Coloca este archivo en la raíz de tu proyecto React
+
+[build]
+  # Comando para compilar el proyecto
+  command = "npm run build"
+  
+  # Carpeta que se publica
+  publish = "build"
+
+# Redirecciones (en caso de usar React Router)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Headers de seguridad
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Optimización de imágenes
+[context.production]
+  command = "npm run build"
+  
+[context.development]
+  command = "npm run dev"
+
+# Variables de entorno (configurar en Netlify UI)
+[build.environment]
+  REACT_APP_API_URL = "https://api.moles.app"
+  NODE_ENV = "production"
