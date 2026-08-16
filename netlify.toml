@@ -33,5 +33,6 @@
 
 # Variables de entorno (configurar en Netlify UI)
 [build.environment]
+  CI = "false"
   REACT_APP_API_URL = "https://api.moles.app"
   NODE_ENV = "production"
