@@ -3,10 +3,11 @@
 
 [build]
   # Comando para compilar el proyecto
-  command = "CI=false npm run build"
-  
-  # Carpeta que se publica
+  command = "npm run build"
   publish = "build"
+
+  [build.environment]
+  CI = "false"
 
 # Redirecciones (en caso de usar React Router)
 [[redirects]]
